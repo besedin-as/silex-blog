@@ -1,0 +1,13 @@
+{% extends 'user/user-layout.twig' %}
+
+{% block page %}
+    {% embed 'user/user-page.twig' %}
+        {% block usertitle %}
+           <- Choose, what you need
+        {% endblock %}
+        {% block usercontent %}
+            <p>BLA BLA BLA</p>
+            {#{% include 'article/all.twig' %}#}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

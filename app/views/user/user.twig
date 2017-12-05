@@ -1,0 +1,11 @@
+{% extends 'user/user-layout.twig' %}
+
+{% block page %}
+    {% embed 'user/user-page.twig' %}
+        {% block usertitle %}
+            Admin menu
+        {% endblock %}
+        {% block usercontent %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

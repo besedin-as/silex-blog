@@ -1,0 +1,21 @@
+{% extends 'admin/admin-layout.twig' %}
+
+{% block page %}
+    {% embed 'admin/admin-page.twig' %}
+        {% block admintitle %}
+            List of users
+        {% endblock %}
+        {% block admincontent %}
+        	<ul class="admin-list col-md-12">
+            {% for user in users %}
+				<li>
+					<span>{{ user.id ~ '.' }}</span>
+            		<h4>{{ user.username }}</h4>
+            		<a href="{{ path('admin.remove.user', {id: user.id}) }}"><i class="glyphicon glyphicon-remove"></i></a>
+            	</li>
+            {% endfor %}
+        	</ul>
+        	{% include 'helpers/pagination.twig' %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

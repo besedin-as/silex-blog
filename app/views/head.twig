@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="{{ global.request.basepath }}/css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+{#{% if global.request.attributes.get('_route') matches '/^(admin|post)\..*$/' %}#}
+{% if global.request.attributes.get('_route') matches '/^(admin)\..*$/' or global.request.get('_route') == 'user.creating.posts'
+or global.request.get('_route') == 'user.create' or global.request.get('_route') == 'user.create.post'%}
+    <link href="{{ global.request.basepath }}/css/admin.css" rel="stylesheet">
+{% else %}
+    <link href="{{ global.request.basepath }}/css/styles.css" rel="stylesheet">
+{% endif %}
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,latin-ext' rel='stylesheet'
+      type='text/css'>
+
+<script>
+    UPLOADCARE_LIVE = false;
+    UPLOADCARE_IMAGE_ONLY = true;
+    UPLOADCARE_CROP = 'free';
+</script>
+
+{{ app.uploadcare.widget.getScriptTag | raw }}
+
+<title>GOLDEN BLOG</title>
+
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->

@@ -1,0 +1,10 @@
+<li class="comment-a ">
+	<div class="col-md-3 comment-username">
+	<a href="{{ path('user.profile', {name: app.user_controller.getUsername(comment.id_user) }) }}">
+	{{ app.user_controller.getUsername(comment.id_user) }}
+	</a> written:
+	</div>
+	<div class="col-md-9 comment-content">
+		{{ comment.body }}
+	</div>
+</li>

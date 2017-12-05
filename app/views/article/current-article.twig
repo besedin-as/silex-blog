@@ -1,0 +1,6 @@
+<article class="col-md-12 current-a">
+	<h1>{{ post.title }}</h1>
+	<span>By <a href="{{ path('user.profile', {name: app.user_controller.getUsername(post.id_user)}) }}">{{ app.user_controller.getUsername(post.id_user) }}</a></span>
+	<span>{{ post.created }}</span>
+	<p>{{ post.body|raw }}</p>
+</article>				

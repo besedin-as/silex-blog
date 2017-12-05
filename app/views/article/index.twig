@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	{% embed 'website-content.twig' %}
+		{% block innercontent %}
+			{% for post in posts %}
+				{% include 'article/index-article.twig' %}
+			{% endfor %}
+			<a href="{{ path('article.index') }}" class="all-btn">view all posts</a>
+		{% endblock %}
+	{% endembed %}
+{% endblock %}

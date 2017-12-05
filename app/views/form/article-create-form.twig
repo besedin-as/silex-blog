@@ -1,0 +1,16 @@
+<form action="{{ path('admin.create.post') }}" method="POST">
+	<div class="form-group col-md-10 col-md-offset-1">
+		{{ form_errors(createForm.title)}}
+		{{ form_label(createForm.title) }}
+		{{ form_widget(createForm.title, {'attr': {'class': 'form-control input-lg'}}) }}
+
+		{{ form_errors(createForm.body)}}
+		{{ form_label(createForm.body) }}
+		{{ form_widget(createForm.body, {'attr': {'class': 'form-control input-lg'}}) }}
+	</div>
+	<div class="form-group col-md-10 col-md-offset-1">
+		{#{{ form_widget(createForm._token) }}#}
+		<input type="hidden" name="_csrf_token" value="{{ form_rest(createForm) }}">
+		<input type="submit" class="form-control input-lg" value="CREATE">
+	</div>
+</form>

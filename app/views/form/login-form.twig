@@ -1,0 +1,17 @@
+<form action="{{ path('admin_login_check') }}" method="POST" class="col-md-8 col-md-offset-2 acc-form">
+	<div class="form-group col-md-6 col-md-offset-3">
+		{{ form_errors(loginForm._username)}}
+		{{ form_label(loginForm._username) }}
+		{{ form_widget(loginForm._username, {'attr': {'class': 'form-control input-lg'}}) }}
+		{{ form_errors(loginForm._password)}}
+		{{ form_label(loginForm._password) }}
+		{{ form_widget(loginForm._password, {'attr': {'class': 'form-control input-lg'}}) }}
+
+		<input type="hidden" name="_csrf_token" value="{{ form_rest(loginForm) }}">
+        {#{{ form_widget(loginForm._token) }}#}
+		<input type="submit" class="form-control input-lg" value="LOGIN">
+	{% if error %}
+		<div class="error">{{ error }}</div>
+	{% endif %}
+	</div>
+</form>

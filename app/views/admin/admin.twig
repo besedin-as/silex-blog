@@ -1,0 +1,11 @@
+{% extends 'admin/admin-layout.twig' %}
+
+{% block page %}
+    {% embed 'admin/admin-page.twig' %}
+        {% block admintitle %}
+            Admin menu
+        {% endblock %}
+        {% block admincontent %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

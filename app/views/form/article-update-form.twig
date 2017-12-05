@@ -1,0 +1,12 @@
+<form action="{{ global.request.getRequestUri() }}" method="POST">
+	<div class="form-group col-md-10 col-md-offset-1">
+		{{ form_errors(updateForm.body)}}
+		{{ form_label(updateForm.body) }}
+		{{ form_widget(updateForm.body) }}
+	</div>
+	<div class="form-group col-md-10 col-md-offset-1">
+		{#{{ form_widget(updateForm._token) }}#}
+		<input type="hidden" name="_csrf_token" value="{{ form_rest(updateForm) }}">
+		<input type="submit" class="form-control input-lg" value="UPDATE">
+	</div>
+</form>

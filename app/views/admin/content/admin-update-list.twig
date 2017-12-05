@@ -1,0 +1,21 @@
+{% extends 'admin/admin-layout.twig' %}
+
+{% block page %}
+    {% embed 'admin/admin-page.twig' %}
+        {% block admintitle %}
+            Edit post
+        {% endblock %}
+        {% block admincontent %}
+            <ul class="admin-list col-md-12">
+            	{% for post in posts %}
+            		<li>
+            			<h4>{{ post.title }}</h4>
+            			<a href="{{ path('admin.remove.article', {id: post.id}) }}"><i class="glyphicon glyphicon-remove"></i></a>
+            			<a href="{{ path('admin.update.article', {id: post.id}) }}"><i class="glyphicon glyphicon-edit"></i></a>
+            		</li>
+            	{% endfor %}
+            </ul>
+            {% include 'helpers/pagination.twig' %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

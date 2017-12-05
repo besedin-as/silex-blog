@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	{% embed 'website-content.twig' %}
+		{% block innercontent %}
+				<ul class="col-md-12 no-bullet">
+					{#{% for post in posts %}#}
+						{#<li class="article-list">#}
+							{#{% include 'article/all-article.twig' %}#}
+						{#</li>#}
+					{#{% endfor %}#}
+				</ul>
+				{#{% include 'helpers/pagination.twig' %}#}
+		{% endblock %}
+	{% endembed %}
+{% endblock %}

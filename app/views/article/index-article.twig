@@ -1,0 +1,11 @@
+{% if loop.first %}
+	<article class="col-md-12 normal-a">
+{% else %}
+	<article class="col-md-6 normal-a">
+{% endif %}
+		<h1>{{ post.title }}</h1>
+		<span>By <a href="{{ path('user.profile', {name: app.user_controller.getUsername(post.id_user)}) }}">{{ app.user_controller.getUsername(post.id_user) }}</a></span>
+		<span>{{ post.created }}</span>
+		<div>{{ (post.body[:200] ~ '...')|raw }}</div>
+		<a href="{{ path('article.id', {id: post.id}) }}" class="btn btn-default btn-sm">read more</a>
+	</article>

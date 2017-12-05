@@ -1,0 +1,19 @@
+<div class="text-center">
+	<ul class="pagination text-center">
+		<li class="{{ (global.request.query.get("page") == 1 or global.request.query.get("page") == 0) ? 'disabled' : '' }}">
+			<a href="?page={{ global.request.query.get("page") - 1 }}" aria-label="Previous">
+				<span aria-hidden="true">&laquo;</span>
+			</a>
+		</li>
+		<li><a href="?page=1">1</a></li>
+		<li><a href="?page=2">2</a></li>
+		<li><a href="?page=3">3</a></li>
+		<li><a href="?page=4">4</a></li>
+		<li><a href="?page=5">5</a></li>
+		<li class="{{ (global.request.query.get("page") == 5) ? 'disabled' : '' }}">
+			<a href="?page={{ global.request.query.get("page") + 1 }}" aria-label="Next">
+				<span aria-hidden="true">&raquo;</span>
+			</a>
+		</li>
+	</ul>
+</div>

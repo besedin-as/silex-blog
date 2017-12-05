@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% include 'head.twig' %}
+</head>
+<body>
+{% include 'website-header.twig' %}
+
+{% include 'website-panel.twig' %}
+
+{% block content %}
+{% endblock %}
+
+{% include 'website-footer.twig' %}
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

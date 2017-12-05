@@ -1,0 +1,35 @@
+{
+  "config": {
+    "preferred-install": "dist",
+    "platform": {
+      "php": "7.0"
+    }
+  },
+  "require": {
+    "silex/silex": "^2.0",
+    "twig/twig": "^2.0",
+    "doctrine/dbal": "^2.5",
+    "symfony/security": "^3.3",
+    "symfony/twig-bridge": "^3.3",
+    "symfony/validator": "^3.3",
+    "symfony/config": "^3.3",
+    "symfony/translation": "^3.3",
+    "symfony/form": "^3.3",
+    "symfony/security-csrf": "^3.3",
+    "symfony/debug": "~3.3",
+    "twbs/bootstrap": "^3.3",
+    "uploadcare/uploadcare-php": "^1.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Controllers": "app/",
+      "Models": "app/",
+      "forms": "app/"
+    }
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "cp -R vendor/twbs/bootstrap/dist/ web/css/bootstrap"
+    ]
+  }
+}

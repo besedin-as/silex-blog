@@ -1,0 +1,39 @@
+{{ form_errors(registerForm) }}
+<form action="{{ global.request.getRequestUri() }}" method="POST" class="col-md-8 col-md-offset-2 acc-form">
+	<div class="form-group col-md-4">
+		{{ form_errors(registerForm.username)}}
+		{{ form_label(registerForm.username) }}
+		{{ form_widget(registerForm.username, {'attr': {'class': 'form-control input-lg'}}) }}
+		{{ form_errors(registerForm.email)}}
+		{{ form_label(registerForm.email) }}
+		{{ form_widget(registerForm.email, {'attr': {'class': 'form-control input-lg'}}) }}
+	</div>
+	<div class="form-group col-md-4">
+		{{ form_errors(registerForm.password.first)}}
+		{{ form_label(registerForm.password.first) }}
+		{{ form_widget(registerForm.password.first, {'attr': {'class': 'form-control input-lg'}}) }}
+		{{ form_errors(registerForm.password.second)}}
+		{{ form_label(registerForm.password.second) }}
+		{{ form_widget(registerForm.password.second, {'attr': {'class': 'form-control input-lg'}}) }}
+        {#{{ app.uploadcare.widget.getInputTag('file_id') | raw }}#}
+	</div>
+	<div class="form-group col-md-4" style="margin-top: 11px;">
+        {#{{ form_widget(registerForm._token) }}#}
+		{#<label for="register_photo" class="required">Photo</label>#}
+		<label for="register_image" class="required">Avatar</label>
+        {{ app.uploadcare.widget.getInputTag('register[image]') | raw }}
+		{{ form_widget(registerForm.image, { 'attr':{'disabled':'disabled', 'class': 'hide'} }) }}
+        {#{{ form_widget(registerForm.image, {'attr': {'class': 'form-control input-lg'}}) }}#}
+		<input type="hidden" name="_csrf_token" value="{{ form_rest(registerForm) }}">
+		<input type="submit" class="form-control input-lg" value="REGISTER">
+	</div>
+</form>
+
+{% block scripts %}
+	<script>
+        var widget = uploadcare.SingleWidget('[role=uploadcare-uploader]');
+        widget.onUploadComplete(function() {
+//            document.querySelector(".upload-form-btn").style = "display: inline-block;";
+        });
+	</script>
+{% endblock %}

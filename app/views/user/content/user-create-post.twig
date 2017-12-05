@@ -1,0 +1,12 @@
+{% extends 'user/user-layout.twig' %}
+
+{% block page %}
+    {% embed 'user/user-page.twig' %}
+        {% block usertitle %}
+            Create post
+        {% endblock %}
+        {% block usercontent %}
+            {% include 'form/user-create-post-form.twig' %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

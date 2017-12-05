@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	{% embed 'website-content.twig' %}
+		{% block innercontent %}
+			{% for post in posts %}
+				{% include 'article/current-article.twig' %}
+			{% endfor %}
+				{% include 'comment/comment-list.twig' %}
+		{% endblock %}
+	{% endembed %}
+{% endblock %}

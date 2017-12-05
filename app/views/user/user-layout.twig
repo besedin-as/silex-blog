@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include 'head.twig' %}
+</head>
+<body>
+<div id="wrapper">
+
+    {% include 'user/user-nav.twig' %}
+
+    {% block page %}
+    {% endblock %}
+
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="{{ global.request.basepath }}/css/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'create_body' );
+    CKEDITOR.replace( 'update_body' );
+</script>
+</body>
+</html>

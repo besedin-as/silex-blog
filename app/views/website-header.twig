@@ -1,0 +1,26 @@
+<header class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <nav class="nav-border">
+                <ul>
+                    {% if global.request.get('_route') == 'user.login' or global.request.get('_route') == 'user.register' %}
+                        <li><a href="{{ path('index.index') }}" class="YouAreHere">Home</a></li>
+                    {% else %}
+                        {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li><a href="{{ path('admin.index') }}">Admin</a></li>
+                            {% else %}
+                                <li><a href="{{ path('user.creating.posts') }}">Posts</a></li>
+                            {% endif %}
+                            <li><a href="{{ path('user.own') }}">Profile</a></li>
+                            <li><a href="{{ path('logout') }}">Log out</a></li>
+                        {% else %}
+                            <li><a href="{{ path('user.login') }}" id="login-btn">Log In</a></li>
+                        {% endif %}
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <h1><a href="{{ path('index.index') }}">GOLDEN BLOG</a></h1>
+</header>

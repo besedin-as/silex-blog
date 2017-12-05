@@ -1,0 +1,9 @@
+<form action="{{ global.request.getRequestUri() }}" method="POST" class="col-md-9">
+	{{ form_errors(commentForm.comment)}}
+	{{ form_label(commentForm.comment) }}
+	{{ form_widget(commentForm.comment) }}
+
+	{#{{ form_widget(commentForm._token) }}#}
+	<input type="hidden" name="_csrf_token" value="{{ form_rest(commentForm) }}">
+	<input type="submit" class="form-control input-lg">
+</form>

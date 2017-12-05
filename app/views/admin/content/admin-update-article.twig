@@ -1,0 +1,12 @@
+{% extends 'admin/admin-layout.twig' %}
+
+{% block page %}
+    {% embed 'admin/admin-page.twig' %}
+        {% block admintitle %}
+            Edit post
+        {% endblock %}
+        {% block admincontent %}
+            {% include 'form/article-update-form.twig' %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

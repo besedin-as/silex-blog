@@ -1,0 +1,18 @@
+<section class="container-fluid" id="content">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 mg-top">
+			<div class="col-md-9 main-articles">
+			{% if global.request.get('_route') != 'index.index' %}
+				<a href="{{ path('index.index') }}" class=" home-btn">home</a>
+			{% endif %}
+			<div class="row">
+				{% block innercontent %}
+				{% endblock %}
+			</div>
+		</div>
+				
+		{% include 'helpers/sidebar.twig' %}
+
+	</div>
+	</div>
+</section>

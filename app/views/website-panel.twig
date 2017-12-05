@@ -1,0 +1,13 @@
+	<section class="container-fluid" id="gradient-section">
+		<div class="row">
+            {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+				<h1>Hello, {{ app.user.username }}!</h1>
+            {% else %}
+				{% if  global.request.attributes.get('_route')  == 'user.login' %}
+					{% include 'form/login-form.twig' %}
+				{% else %}
+					{% include 'form/register-form.twig' %}
+				{% endif %}
+			{% endif %}
+		</div>
+	</section>
